@@ -12,22 +12,24 @@
 // //========================================================================//
 
 class Storage {
+#items
+
     constructor(items){
-        this.items = items;
+        this.#items = items;
     }
 
     getItems(){
-        return this.items
+        return this.#items
     };
 
     addItem(newItem){
-        return this.items.push(newItem);
+        return this.#items.push(newItem);
     };
 
     removeItem(itemToRemove){
-        const itemToRemoveIndex = this.items.indexOf(itemToRemove);
+        const itemToRemoveIndex = this.#items.indexOf(itemToRemove);
         if (itemToRemoveIndex !== -1) {
-            return this.items.splice(itemToRemoveIndex, 1);
+            return this.#items.splice(itemToRemoveIndex, 1);
         }
     }
 }
